@@ -1,0 +1,76 @@
+%-----------------------------------
+% This program is a test.
+%
+% The purpose is to choose what you'd like to eat, pay and leave
+% Hit CTRL + D to leave the fastfood
+%-----------------------------------
+
+begin
+	print ("Hello and welcome to FastFood. We can serve you :", NL,"1. Hamburger $5",NL,"2. Fried chicken $4",NL,"3. Hot dog $2",NL,"What would you like ?", NL)
+	bForMeal := TRUE
+endbegin
+line ("1")
+     	if bForMeal then
+		print("Ok, a Hamburger then.", NL)
+		nPrice := 5
+		nfPrintSecondChoice()
+	else
+		print ("One cold Coke for you !", NL)
+		nPrice := nPrice + 1
+		print ("Okay, sooo... It will cost you : $", nPrice, NL, "Thank you, come again!", NL)
+		exit(0)
+	endif
+endline
+line ("2")
+        if bForMeal then
+		print("Good choice! They're the best I've ever eat in the whole country.", NL)
+		nPrice := 4
+		nfPrintSecondChoice()
+	else
+		print("With that weather, I think I should get one too.", NL)
+		nPrice := nPrice + 1
+		print ("Okay, sooo... It will cost you : $", nPrice, NL, "Thank you, come again!", NL)
+		exit(0)
+	endif
+endline
+line ("3")
+	if bForMeal then
+		print("They taste like they come from NY!", NL)
+		nMeal := 2
+		nfPrintSecondChoice()
+	endif
+endline
+
+line '^[Yy]+[Ee]+[Ss]*'
+	if bForFries then
+		print ("And here come the good french fries!", NL)
+		nPrice := nPrice + 1
+		nfPrintThirdChoice()
+	else
+		print ("Okay, we have : ",NL,"1. Coke $1",NL,"2. Beer 1$")
+	endif	
+endline
+line '^[Nn]+[Oo]*'
+	if bForFires then
+		print ("Okay, as you want.")
+		nfPrintThirdChoice()
+	else
+		print ("Okay, no drink. So, it will cost you : $", nPrice, NL, "Thank you, come again!", NL)
+		exit(0)
+	endif
+endline
+
+end
+	print("Have a nice day and enjoy your meal.", NL)
+endend
+
+function nfPrintSecondChoice ()
+	 print ("So, would you like some fries ?", NL)
+	 bForMeal := FALSE
+	 bForFries := TRUE
+endfunction
+
+function nfPrintThirdChoice ()
+	 print ("Wanna drink something with that ?", NL)
+	 bForFires := FALSE
+endfunction

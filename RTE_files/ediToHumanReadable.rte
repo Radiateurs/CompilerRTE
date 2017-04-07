@@ -1,0 +1,22 @@
+message "UN-EDIFACT/96/draft/A/invoic.msg" receiving
+
+!segment UNT
+!	print(e0062,NL)
+!	print(eUNH.0062,NL)
+!endsegment
+
+default
+	print("TEST")
+!	print(pick(1,1,EOF))
+enddefault
+
+inline
+double	nfFindPos(char *toFind, char **ptr)
+{
+  int	i = 0;
+
+  while (ptr[i] != NULL && strcmp(ptr[i], toFind) != 0)
+    i++;
+  return ((ptr[i] != NULL) ? i : 0);
+}
+endinline

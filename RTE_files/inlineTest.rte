@@ -1,0 +1,42 @@
+%-----------------------------------------------
+% Basic program to test the inline possibilities
+%
+% A simple bash
+%-----------------------------------------------
+
+begin
+	nLinePostion := 1
+	print("$>")
+endbegin
+
+default
+	nPid := nfDivideProcess()
+	if nPid = 0 then
+	   	tCommand := pick(1,1,EOL)
+		if index(tCommand, " ") = 0 then
+			tExec := tCommand
+		else
+			tExec := substr(tCommand, 1, index(tCommand, " ") - 1)
+			split(substr(tCommand, length(tExec) + 2, (length(tCommand) - length(tExec))), taArgs, " ")
+		endif
+	   	exec(tExec, taArgs)
+	else
+		nfWaitForProcess(nPid)
+		print("$>")
+	endif
+enddefault
+
+inline
+
+double	nfDivideProcess()
+{
+  return (fork());
+}
+
+double	nfWaitForProcess(pid_t pid)
+{
+  int	status;
+
+  return (waitpid(pid, &status, 0));
+}
+endinline

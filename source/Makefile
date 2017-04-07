@@ -4,7 +4,7 @@
 # Version : 1.0
 #----------------------------------------------
 
-CC =		gcc -std=gnu99
+CC =		gcc
 
 RM =		rm -f
 
@@ -12,7 +12,10 @@ CP =		cp
 
 NAME =		mktr2
 
-SRC =		src/main.c	\
+SRC =		src/main.c		\
+		src/RTEhandler.c	\
+		src/init.c		\
+		src/quit.c		\
 		$(ERRSRC)
 
 ERRSRC =	src/error/flagError.c
@@ -23,7 +26,7 @@ INC =		-I./include/
 
 LIB =		-L./lib/ -lfast_io
 
-CFLAGS +=	$(INC) $(LIB)
+CFLAGS +=	-std=gnu99 $(INC) $(LIB)
 
 all:		$(NAME)
 

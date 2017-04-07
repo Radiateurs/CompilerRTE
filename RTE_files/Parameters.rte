@@ -1,0 +1,6 @@
+begin
+	log(taPARAMETERS)
+	if oD then
+	   	print("The flag debug is on",NL)
+	endif
+endbegin

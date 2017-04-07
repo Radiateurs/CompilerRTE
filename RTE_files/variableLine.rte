@@ -1,0 +1,10 @@
+line ("")
+     nEmpty++
+endline
+line (not "")
+     nNonEmpty++
+endline
+end
+	print("There were ", nEmpty, " empty lines.", NL)
+	print("And ", nNonEmpty, " lines with text.", NL)
+endend
