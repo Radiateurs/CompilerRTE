@@ -8,11 +8,12 @@
 #include	"CRmain_init.h"
 #include	"CRquit.h"
 
-int		main(int argc, char *argv[], __attribute__((__unused_))char *env[])
+int		main(int argc, char *argv[], char *env[])
 {
-  int		exit_status;
+  int		exit_status = 0;
 
   init(argc, argv);
+  parser_main();
   quit();
   return (exit_status);
 }

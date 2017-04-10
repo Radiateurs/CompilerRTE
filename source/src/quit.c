@@ -5,11 +5,13 @@
 */
 
 #include	"CRmain.h"
+#include	"ptr_manip/c2d.h"
 
 void		free_global_variable()
 {
   free(g_progname);
   free(g_extension);
+  pm_c2d_free(g_files_path);
 }
 
 void	        quit()

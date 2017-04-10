@@ -1,0 +1,2 @@
+cd lib_source/libptr_manip ; make ; cd ../.. ; cp lib_source/libptr_manip/libptr_manip.a source/lib ; cp -r lib_source/libptr_manip/include/* source/include/ptr_manip/ ;
+cd lib_source/lib_fast_io ; make ; cd ../.. ; cp lib_source/lib_fast_io/libfast_io.a source/lib ; cp -r lib_source/lib_fast_io/include/* source/include/fast_io/

@@ -5,7 +5,7 @@
 */
 
 #include	"CRmain.h"
-#include	"fast_io/fast_io.h"
+#include	"ptr_manip/c2d.h"
 
 bool		is_a_file(char *file_name)
 {
@@ -16,8 +16,5 @@ bool		is_a_file(char *file_name)
 
 void		add_to_files_path(char *path)
 {
-  std_fast_printf("[%s] : Good extention (%s)\n", path, g_extension);
-  /* TODO
-  ** Add path to g_files_path container
-  */
+  g_files_path = pm_c2d_add_str_down(g_files_path, path);
 }

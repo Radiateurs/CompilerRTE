@@ -11,5 +11,6 @@
 
 # include	"CRmain_include.h"
 # include	"CRprog_manager.h"
+# include	"parser/CRparser.h"
 
 #endif		/* __CRMAIN_H__ */

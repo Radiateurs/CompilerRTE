@@ -16,6 +16,8 @@
 char		*g_progname;
 char		*g_extension;
 
+char		**g_info_line;
+
 char		**g_files_path;
 
 bool		is_a_file(char *file_name);

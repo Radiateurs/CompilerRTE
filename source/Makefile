@@ -16,7 +16,11 @@ SRC =		src/main.c		\
 		src/RTEhandler.c	\
 		src/init.c		\
 		src/quit.c		\
-		$(ERRSRC)
+		$(ERRSRC)		\
+		$(PARSESRC)
+
+PARSESRC =	src/parser/getnextline.c	\
+		src/parser/parser_main.c
 
 ERRSRC =	src/error/flagError.c
 
@@ -24,7 +28,7 @@ OBJ =		$(SRC:.c=.o)
 
 INC =		-I./include/
 
-LIB =		-L./lib/ -lfast_io
+LIB =		-L./lib/ -lfast_io -lptr_manip
 
 CFLAGS +=	-std=gnu99 $(INC) $(LIB)
 
